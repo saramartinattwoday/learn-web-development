@@ -1,18 +1,66 @@
 <!DOCTYPE html>
-<html>
-<head>
-<script>
-function myFunction() {
-    console.log("Hello, World!");
-}
-</script>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn web development!</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        max-width: 600px;
+        gap: 10px;
+      }
+      .result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 200px;
+        border: 1px solid black;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Learn web development</h1>
+      <p>With Sara and Alf</p>
+      <p>We will learn the basic concepts of:</p>
+      <ul>
+        <li>HTML - add structure to a web page</li>
+        <li>CSS - add style to a web page</li>
+        <li>JavaScript - add structure to a web page</li>
+      </ul>
+      <input id="input" />
+      <button id="button" type="button">Set color</button>
+      <div id="result" class="result">result</div>
+    </div>
+    <script>
+      const clickHandler = (e) => {
+        e.preventDefault();
+        const currentColor = inputEl.value;
+        if (currentColor) {
+          resultEl.style.backgroundColor = currentColor;
+        } else {
+          alert("Please provide a color");
+        }
+      };
+      const inputEl = document.getElementById("input");
+      const btnEl = document.getElementById("button");
+      const resultEl = document.getElementById("result");
+      btnEl.addEventListener("click", clickHandler);
+    </script>
+  </body>
+</html>
 
-<h2>Learn Web Development</h2>
-<p>With Alf & Sara</p>
 
-<button type="button" onclick="myFunction()">Log</button>
 
-</body>
-</html> 
+
+
+
+
+
+
