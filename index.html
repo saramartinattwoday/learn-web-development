@@ -41,26 +41,21 @@
     <script>
       const clickHandler = (e) => {
         e.preventDefault();
-        const currentColor = inputEl.value;
-        if (currentColor) {
-          resultEl.style.backgroundColor = currentColor;
+
+        const newColor = inputEl.value;
+
+        if (CSS.supports("background-color", newColor)) {
+          resultEl.style.backgroundColor = newColor;
         } else {
-          alert("Please provide a color");
+          alert(`"${newColor}" is not a valid color!`);
         }
       };
+
       const inputEl = document.getElementById("input");
       const btnEl = document.getElementById("button");
       const resultEl = document.getElementById("result");
+
       btnEl.addEventListener("click", clickHandler);
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
